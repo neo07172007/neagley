@@ -5,31 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emily's Vlog</title>
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:2rem auto;padding:0 1.25rem;line-height:1.6;color:#222}
-h1{font-size:2rem} .card{border:1px solid #ddd;border-radius:12px;padding:1rem 1.25rem;margin:1rem 0}
-a{color:#0b5cab} .tag{color:#666;font-size:.9rem}
+:root{--bg:#fdf6ef;--card:#fff;--ink:#2b2320;--muted:#7a6f68;--accent:#c25e3e;--accent-dark:#a34a2e;--line:#ecdccf}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:2rem 1.25rem 3rem}
+.hero{display:flex;gap:2rem;align-items:center;background:linear-gradient(135deg,#fff3e6,#fde8d7);border:1px solid var(--line);border-radius:20px;padding:1.75rem}
+.hero h1{font-size:2.4rem;line-height:1.1;margin:0 0 .5rem}
+.hero p{color:#5d514a;margin:0 0 1rem}
+.hero img{width:190px;height:190px;object-fit:cover;object-position:top;border-radius:50%;border:5px solid #fff;box-shadow:0 8px 24px rgba(0,0,0,.15);flex-shrink:0}
+.links a{display:inline-block;margin:0 .5rem .5rem 0;padding:.45rem .9rem;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.9rem}
+.links a:hover{border-color:var(--accent);color:var(--accent-dark)}
+h2.section{margin:2.25rem 0 1rem;font-size:1.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.thumb{position:relative;cursor:pointer;background:#000}
+.thumb img{display:block;width:100%;height:340px;object-fit:cover;object-position:top}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18)}
+.play span{background:var(--accent);color:#fff;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;padding-left:4px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.player{display:none;background:#000}
+.player iframe{width:100%;height:340px;border:0;display:block}
+.body{padding:1.1rem 1.25rem 1.3rem}
+.body h3{margin:0 0 .25rem;font-size:1.2rem}
+.tag{color:var(--muted);font-size:.88rem;margin:0 0 .6rem}
+.body p{margin:0 0 .8rem}
+.body a{color:var(--accent-dark)}
+.note{font-size:.88rem;color:var(--muted)}
+.foot{color:var(--muted);font-size:.9rem;margin-top:2rem}
+@media(max-width:640px){.hero{flex-direction:column;text-align:center}.hero img{width:160px;height:160px}}
 </style>
 </head>
 <body>
-<h1>Emily's Vlog</h1>
-<p>Short 10-second episodes with Emily — short wavy dark brown bob, wispy bangs, light freckles, black sleeveless ribbed dress at home, and her beach adventures. Videos are stored in Google Drive; this site is the episode list.</p>
-<p><a href="https://drive.google.com/drive/folders/1sdfo7Lspgce99AwlUVJKlWXosY9HDDsX">Open the full Drive folder</a> · <a href="https://drive.google.com/file/d/1ZbyeaqU7rUY2DPU5jGO2RIc94iRqPSWT/view?usp=drivesdk">Character sheet</a> · <a href="https://drive.google.com/drive/folders/12i1hje4GHKIMe2FdLBtpej5uQsukZ7bi">Reference photos</a></p>
-
-<div class="card">
-<h2>E01 — Living Room Reel</h2>
-<p class="tag">Final version · 10 seconds · vertical</p>
-<p>Emily leans toward the camera and talks through her day: coffee first, market, the bookstore she shouldn't go into — and tonight she's cooking. "You're staying for dinner, right?"</p>
-<p><a href="https://drive.google.com/file/d/1AxetfRVyaOMBD2wVvC5f34mrQtVrF2nC/view?usp=drivesdk">Watch E01 on Drive</a></p>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <h1>Emily's Vlog</h1>
+      <p>Short 10-second episodes with Emily — short wavy dark brown bob, wispy bangs, light freckles, and a very full day. New episodes appear here as they're made, after a storyboard is approved and the clip is checked against her character lock.</p>
+      <div class="links">
+        <a href="https://drive.google.com/drive/folders/1sdfo7Lspgce99AwlUVJKlWXosY9HDDsX">Full Drive folder</a>
+        <a href="https://drive.google.com/file/d/1ZbyeaqU7rUY2DPU5jGO2RIc94iRqPSWT/view?usp=drivesdk">Character sheet</a>
+        <a href="https://drive.google.com/drive/folders/12i1hje4GHKIMe2FdLBtpej5uQsukZ7bi">Reference photos</a>
+      </div>
+    </div>
+    <img src="https://drive.google.com/thumbnail?id=1C3j3K8ZlDByeZwA9P1dzTccJOg7Or_sJ&sz=w600" alt="Emily, close-up">
+  </header>
+  <h2 class="section">Episodes</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="thumb" onclick="play(this,'1AxetfRVyaOMBD2wVvC5f34mrQtVrF2nC')">
+        <img src="https://drive.google.com/thumbnail?id=1hnfekGRlKyANT0NQr-Mm39XaF7XLDiQf&sz=w800" alt="Emily in the living room, smiling at the camera">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <div class="player"></div>
+      <div class="body">
+        <h3>E01 — Living Room Reel</h3>
+        <p class="tag">Final version · 10 seconds · vertical</p>
+        <p>Emily leans toward the camera and talks through her day: coffee first, market, the bookstore she shouldn't go into — and tonight she's cooking. “You're staying for dinner, right?”</p>
+        <p><a href="https://drive.google.com/file/d/1AxetfRVyaOMBD2wVvC5f34mrQtVrF2nC/view?usp=drivesdk">Watch E01 on Drive</a></p>
+      </div>
+    </article>
+    <article class="card">
+      <div class="thumb" onclick="play(this,'1T34zT6gyOMK9aX0sMJKSyvCtg21D7Vz1')">
+        <img src="https://drive.google.com/thumbnail?id=1WKk-htmJpOcOAAQKNCb21aqUfAeFZLUd&sz=w800" alt="Emily on the beach holding a colourful beach ball">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <div class="player"></div>
+      <div class="body">
+        <h3>E02 — Beach Ball, Just in Time</h3>
+        <p class="tag">Kept version · 10 seconds · vertical</p>
+        <p>At the autumn beach, a friend off-camera calls Emily and throws a beach ball. She gets up and catches it just in time, then throws it back.</p>
+        <p><a href="https://drive.google.com/file/d/1T34zT6gyOMK9aX0sMJKSyvCtg21D7Vz1/view?usp=drivesdk">Watch E02 (kept version) on Drive</a></p>
+        <p class="note">A regenerated version with a face closer to the original photo is also in Drive, pending a keeper decision — it is not presented here as the final episode.</p>
+      </div>
+    </article>
+  </div>
+  <p class="foot">Tap any thumbnail to play the episode right here. Videos are stored in Google Drive; this site is the episode list.</p>
 </div>
-
-<div class="card">
-<h2>E02 — Beach Ball, Just in Time</h2>
-<p class="tag">Kept version · 10 seconds · vertical</p>
-<p>At the autumn beach, a friend off-camera calls Emily and throws a beach ball. She gets up and catches it just in time, then throws it back.</p>
-<p><a href="https://drive.google.com/file/d/1T34zT6gyOMK9aX0sMJKSyvCtg21D7Vz1/view?usp=drivesdk">Watch E02 (kept version) on Drive</a></p>
-<p>A regenerated version with a face closer to the original photo is also in Drive, pending a keeper decision — it is not presented here as the final episode.</p>
-</div>
-
-<p class="tag">New episodes are added here as they are made, after a storyboard is approved and the clip is checked against Emily's character lock.</p>
+<script>
+function play(thumb, fileId) {
+  var card = thumb.closest('.card');
+  var player = card.querySelector('.player');
+  player.innerHTML = '<iframe src="https://drive.google.com/file/d/' + fileId + '/preview" allow="autoplay" allowfullscreen></iframe>';
+  player.style.display = 'block';
+  thumb.style.display = 'none';
+}
+</script>
 </body>
 </html>
