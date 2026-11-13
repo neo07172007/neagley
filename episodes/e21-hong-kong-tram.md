@@ -1,0 +1,8 @@
+# E21 — Riding the Hong Kong Tram (final)
+
+- Duration: 10 seconds, vertical 720x1280, with audio.
+- Story: the city-explorer facet, and the series' first public-transport episode. Emily rides a classic Hong Kong tram in daylight — front row, upper deck — watching the city roll past her window.
+- Beats: 0-2s wide, upper deck, Emily is already seated by the window in the front row, looking out as the tram rolls along, tall buildings and shopfronts sliding past the big windows; 2-4s medium, she watches the street go by, a small smile, hair moving slightly with the tram's motion, the city outside moving in one consistent direction; 4-6s medium-close, she leans a little closer to the window, still watching, then turns her head toward camera; 6-8s close, to camera, seated, with the line "Okay — front row, upper deck. The whole city just rolls past."; 8-10s medium, she smiles, turns back to the window, and keeps watching the city pass, no fade-out.
+- Outfit: white tee, light open cardigan, dark jeans, white sneakers.
+- Notes: kept as generated. The tram matches the saved Hong Kong tram references — maroon-and-cream double-decker with gold trim and arched windows, wooden trim, brown seats, metal poles — and she stays seated throughout, so there is no boarding or deck-change transition. One plain note: the no-legible-text rule did not hold — shop signs outside are readable Chinese characters in several frames, clearest at 1s and 9s, and a "TRAMWAYS HOTLINE" sign is legible inside the tram at 1s and 9s. The thumbnail is taken from the 7s to-camera frame.
+- Video: Drive, in `Emily Vlog / Episodes / E21 - Riding the Hong Kong Tram`.
